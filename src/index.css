@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @font-face {
   font-family: Montserrat-heading;
   src: url(/fonts/Montserrat-Bold.ttf);
@@ -29,7 +28,6 @@
 
 /* width */
 ::-webkit-scrollbar {
-  
   width: 10px;
 }
 
@@ -42,12 +40,15 @@
 ::-webkit-scrollbar-thumb {
   background: #415a77;
   border-radius: 5px;
-  
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  transition: all;
- transition-duration: 1000ms;
   background: #1b263b;
+}
+
+@media only screen and (max-width: 600px) {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
 }
