@@ -14,16 +14,16 @@ function App() {
   const project = useRef(null);
   const contact = useRef(null);
   const [ref, inView] = useInView({
-    threshold: 0,
+    threshold: 0.2,
   });
   const [ref2, inView2] = useInView({
-    threshold: 0,
+    threshold: 0.2,
   });
   const [ref3, inView3] = useInView({
-    threshold: 0,
+    threshold: 0.3,
   });
   const [ref4, inView4] = useInView({
-    threshold: 0,
+    threshold: 0.2,
   });
   const scrollToHome = () => {
     window.scrollTo({
@@ -134,7 +134,7 @@ function App() {
           scrollToContact={scrollToContact}
         />
         <section
-          className={`h-full min-h-screen flex flex-col items-center pt-16 transition-all  duration-[3000ms] relative ${
+          className={`h-full flex flex-col items-center pt-16 transition-all  duration-[1000ms] relative ${
             inView2 ? "opacity-100" : "opacity-0"
           }`}
           ref={mergeRefs(ref2, about)}
@@ -367,7 +367,7 @@ function App() {
               </div>
             </a>
             <section className="relative w-[30%] max-lg:h-[20rem]">
-              <div className="absolute xl:-left-[22rem] max-xl:-left-[12rem] lg:top-[8rem] gap-5 flex flex-col max-sm:bg-rich_black/15 rounded-lg max-lg:p-2 lg:pr-32">
+              <div className="absolute xl:-left-[22rem] max-xl:-left-[12rem] lg:top-[8rem] gap-5 flex flex-col max-sm:bg-rich_black/15 rounded-lg max-lg:p-2 ">
                 <h1 className="font-heading text-5xl max-lg:text-2xl text-rich_black">
                   Weather Application
                 </h1>
