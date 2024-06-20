@@ -137,11 +137,11 @@ function App() {
           }`}
           ref={mergeRefs(ref2, about)}
         >
-          <h1 className="text-6xl font-heading underline-offset-4 my-16  text-rich_black flex gap-2 relative z-20">
+          <h1 className="text-6xl max-sm:text-5xl font-heading underline-offset-4 my-16  text-rich_black flex gap-2 relative z-20">
             <span className="absolute bottom-0 -right-7 w-[95%] h-5 bg-silver_lake_blue -z-20 "></span>
             <div className="absolute bottom-0 -right-10 rounded-full w-2 h-2 bg-silver_lake_blue -z-20 "></div>
             About
-            <h2 className="absolute text-6xl font-heading top-0 -right-1 -z-10  text-rich_black-900">
+            <h2 className="absolute text-6xl max-sm:text-5xl  font-heading top-0 -right-1 -z-10  text-rich_black-900">
               About
             </h2>
           </h1>
@@ -240,11 +240,11 @@ function App() {
           }`}
           ref={mergeRefs(ref3, project)}
         >
-          <h1 className="text-6xl font-heading underline-offset-4 mt-16 mb-32  text-rich_black flex gap-2 relative z-20">
+          <h1 className="text-6xl max-sm:text-5xl font-heading underline-offset-4 mt-16 mb-32  text-rich_black flex gap-2 relative z-20">
             <span className="absolute bottom-0 -right-7 w-[95%] h-5 bg-silver_lake_blue -z-20 "></span>
             <div className="absolute bottom-0 -right-10 rounded-full w-2 h-2 bg-silver_lake_blue -z-20 "></div>
             Projects
-            <h2 className="absolute text-6xl font-heading top-0 -right-1 -z-10  text-rich_black-900">
+            <h2 className="absolute text-6xl max-sm:text-5xl font-heading top-0 -right-1 -z-10  text-rich_black-900">
               Projects
             </h2>
           </h1>
@@ -402,11 +402,11 @@ function App() {
           }`}
           ref={mergeRefs(ref4, contact)}
         >
-          <h1 className="text-6xl font-heading underline-offset-4 my-32  text-rich_black flex gap-2 relative z-10">
+          <h1 className="text-6xl max-sm:text-5xl font-heading underline-offset-4 my-32  text-rich_black flex gap-2 relative z-10">
             <div className="absolute bottom-0 -right-7 w-[95%] h-5 bg-silver_lake_blue -z-20 "></div>
             <div className="absolute bottom-0 -right-10 rounded-full w-2 h-2 bg-silver_lake_blue -z-20 "></div>
             Contact
-            <div className="absolute text-6xl font-heading top-0 -right-1 -z-10  text-rich_black-900">
+            <div className="absolute text-6xl max-sm:text-5xl font-heading top-0 -right-1 -z-10  text-rich_black-900">
               Contact
             </div>
           </h1>
