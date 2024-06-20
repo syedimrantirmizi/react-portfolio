@@ -3,10 +3,12 @@ import React, { useEffect, useState } from "react";
 const Dots = () => {
   const colors = ["bg-silver_lake_blue", "bg-oxford_blue-800", "bg-yinmn_blue"];
   const [dots, setDots] = useState([]);
+  const totalDots = window.visualViewport.width >= "1200" ? 100 : 50;
+  console.log(totalDots)
   useEffect(() => {
     const generateDots = () => {
       const newDots = [];
-      for (let i = 0; i < 100; i++) {
+      for (let i = 0; i < totalDots; i++) {
         newDots.push({
           id: i,
           left: `${Math.random() * 100}vw`,

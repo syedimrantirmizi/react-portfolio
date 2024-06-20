@@ -13,6 +13,7 @@ function App() {
   const about = useRef(null);
   const project = useRef(null);
   const contact = useRef(null);
+  console.log(window.visualViewport.width)
   const [ref, inView] = useInView({
     threshold: 0.2,
   });
@@ -49,7 +50,6 @@ function App() {
       behavior: "smooth",
     });
   };
-  console.log(window.screenX);
   useEffect(() => {
     setColored1(false);
     setColored2(false);
@@ -87,7 +87,6 @@ function App() {
   return (
     <>
       <div className="bg-platinum h-full min-h-screen relative w-full">
-        <Dots />
         <div
           className="h-screen flex justify-center w-full items-between overflow-hidden relative"
           ref={mergeRefs(ref, home)}
@@ -134,12 +133,12 @@ function App() {
           scrollToContact={scrollToContact}
         />
         <section
-          className={`h-full flex flex-col items-center pt-16 transition-all  duration-[1000ms] relative ${
+          className={`h-full flex flex-col items-center pt-16 transition-all  duration-[3000ms] relative ${
             inView2 ? "opacity-100" : "opacity-0"
           }`}
           ref={mergeRefs(ref2, about)}
         >
-          <h1 className="text-6xl font-heading underline-offset-4 my-16  text-rich_black flex gap-2 relative z-10">
+          <h1 className="text-6xl font-heading underline-offset-4 my-16  text-rich_black flex gap-2 relative z-20">
             <span className="absolute bottom-0 -right-7 w-[95%] h-5 bg-silver_lake_blue -z-20 "></span>
             <div className="absolute bottom-0 -right-10 rounded-full w-2 h-2 bg-silver_lake_blue -z-20 "></div>
             About
@@ -242,7 +241,7 @@ function App() {
           }`}
           ref={mergeRefs(ref3, project)}
         >
-          <h1 className="text-6xl font-heading underline-offset-4 mt-16 mb-32  text-rich_black flex gap-2 relative z-10">
+          <h1 className="text-6xl font-heading underline-offset-4 mt-16 mb-32  text-rich_black flex gap-2 relative z-20">
             <span className="absolute bottom-0 -right-7 w-[95%] h-5 bg-silver_lake_blue -z-20 "></span>
             <div className="absolute bottom-0 -right-10 rounded-full w-2 h-2 bg-silver_lake_blue -z-20 "></div>
             Projects
@@ -305,8 +304,8 @@ function App() {
                   Attendance Application
                 </h1>
                 <p className="font-maintext text-lg max-lg:text-base  text-oxford_blue">
-                  Role-Based Application firebase API's, made on react with the help of Tailwind.
-                
+                  Role-Based Application firebase API's, made on react with the
+                  help of Tailwind.
                 </p>
                 <a
                   href="https://attendancesit.vercel.app/"
@@ -404,19 +403,31 @@ function App() {
           }`}
           ref={mergeRefs(ref4, contact)}
         >
-          <p className="text-6xl font-heading underline-offset-4 my-32  text-rich_black flex gap-2 relative z-10">
+          <h1 className="text-6xl font-heading underline-offset-4 my-32  text-rich_black flex gap-2 relative z-10">
             <div className="absolute bottom-0 -right-7 w-[95%] h-5 bg-silver_lake_blue -z-20 "></div>
             <div className="absolute bottom-0 -right-10 rounded-full w-2 h-2 bg-silver_lake_blue -z-20 "></div>
             Contact
             <div className="absolute text-6xl font-heading top-0 -right-1 -z-10  text-rich_black-900">
               Contact
             </div>
-          </p>
-          <p className="text-xl font-subheading text-yinmn_blue w-[30%]">
-            Have a question or want to work together? Leave your details and
+          </h1>
+          <p className="text-xl font-subheading text-yinmn_blue w-[45%] max-lg:w-[70%] text-center z-20">
+            Have a question or want to work together? Contact me at these links and
             I'll get back to you as soon as possible.
           </p>
+          <div className="z-20 flex justify-around gap-5 pt-16 w-[50%] ">
+            <a target="_blank" href="https://github.com/syedimrantirmizi"  className="flex justify-center">
+              <img src="/images/githubicon.png" alt="" className="w-28" />
+            </a>
+            <a target="_blank" href="https://www.linkedin.com/in/syedimrantirmizi/"  className="flex justify-center">
+              <img src="/images/linkedinicon.png" alt="" className="w-28" />
+            </a>
+            <a target="_blank" href="mailto:syedimrantirmizi@gmail.com" className="flex justify-center">
+              <img src="/images/email.png" className="w-24" alt="" />
+            </a>
+          </div>
         </section>
+        <Dots />
       </div>
     </>
   );
