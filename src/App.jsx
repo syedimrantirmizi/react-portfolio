@@ -14,16 +14,16 @@ function App() {
   const project = useRef(null);
   const contact = useRef(null);
   const [ref, inView] = useInView({
-    threshold: 0.4,
+    threshold: 0,
   });
   const [ref2, inView2] = useInView({
-    threshold: 0.3,
+    threshold: 0,
   });
   const [ref3, inView3] = useInView({
-    threshold: 0.4,
+    threshold: 0,
   });
   const [ref4, inView4] = useInView({
-    threshold: 0.4,
+    threshold: 0,
   });
   const scrollToHome = () => {
     window.scrollTo({
@@ -95,24 +95,24 @@ function App() {
           <div className="w-full h-full relative bg-platinum">
             <div className="w-full h-[85%] flex justify-center px-24 gap-5 items-center flex-col text-rich_black font-heading text-6xl ">
               <div className="text-6xl font-heading  underline-offset-4 flex gap-3 max-lg:flex-col max-lg:text-center">
-                <p className="text-silver_lake_blue animate-fade-right animate-once animate-duration-[2000ms] animate-ease-in-out z-20">
+                <h1 className="text-silver_lake_blue animate-fade-right animate-once animate-duration-[2000ms] animate-ease-in-out z-20">
                   Hi, I am
-                </p>
-                <p className="animate-fade-left animate-once animate-duration-[2000ms] animate-ease-in-out z-20">
+                </h1>
+                <h1 className="animate-fade-left animate-once animate-duration-[2000ms] animate-ease-in-out z-20">
                   Syed Imran Tirmizi
-                </p>
+                </h1>
               </div>
-              <div className="text-xl text-silver_lake_blue font-maintext text-center animate-fade-up animate-once animate-duration-[5000ms] animate-ease-in-out z-20">
+              <h2 className="text-xl text-silver_lake_blue font-maintext text-center animate-fade-up animate-once animate-duration-[5000ms] animate-ease-in-out z-20">
                 A MERN Stack Developer
-              </div>
+              </h2>
               <button
                 className="py-2 px-16 rounded font-subheading relative transition-all duration-500 z-20 group animate-fade-down animate-once animate-duration-[2000ms] animate-ease-in-out "
                 onClick={scrollToAbout}
               >
-                <p className="text-xl text-yinmn_blue transition-colors duration-500 z-20">
+                <p className="text-xl text-yinmn_blue transition-all duration-500 z-20 group-hover:text-[24px] ">
                   View my work
                 </p>
-                <span className="w-full h-1 absolute rounded bottom-0 left-0 ease-in-out transition-all duration-500 group-hover:w-1 group-hover:h-full bg-yinmn_blue -z-10"></span>
+                <span className="w-full h-[2px] absolute rounded bottom-0 left-0 ease-in-out transition-all duration-500 group-hover:w-[2px] group-hover:h-full bg-yinmn_blue -z-10"></span>
                 <img src="" alt="" />
               </button>
             </div>
@@ -134,27 +134,27 @@ function App() {
           scrollToContact={scrollToContact}
         />
         <section
-          className={`h-full min-h-screen flex flex-col items-center pt-16 transition-all  duration-1000 relative ${
+          className={`h-full min-h-screen flex flex-col items-center pt-16 transition-all  duration-[3000ms] relative ${
             inView2 ? "opacity-100" : "opacity-0"
           }`}
           ref={mergeRefs(ref2, about)}
         >
-          <p className="text-6xl font-heading underline-offset-4 my-16  text-rich_black flex gap-2 relative z-10">
-            <div className="absolute bottom-0 -right-7 w-[95%] h-5 bg-silver_lake_blue -z-20 "></div>
+          <h1 className="text-6xl font-heading underline-offset-4 my-16  text-rich_black flex gap-2 relative z-10">
+            <span className="absolute bottom-0 -right-7 w-[95%] h-5 bg-silver_lake_blue -z-20 "></span>
             <div className="absolute bottom-0 -right-10 rounded-full w-2 h-2 bg-silver_lake_blue -z-20 "></div>
             About
-            <div className="absolute text-6xl font-heading top-0 -right-1 -z-10  text-rich_black-900">
+            <h2 className="absolute text-6xl font-heading top-0 -right-1 -z-10  text-rich_black-900">
               About
-            </div>
-          </p>
+            </h2>
+          </h1>
           <div className="w-full px-16 flex max-xl:flex-col max-xl:gap-16">
-            <div className="w-1/2 max-xl:w-full flex flex-col items-center gap-16">
+            <aside className="w-1/2 max-xl:w-full flex flex-col items-center gap-16">
               <img
                 src="/images/imran.jpg"
                 alt=""
                 className="w-52 rounded-full z-20"
               />
-              <p className="text-lg font-maintext text-center px-24 max-lg:px-2 text-oxford_blue z-20">
+              <p className="text-lg font-maintext text-center px-24 max-lg:px-2 text-yinmn_blue z-20">
                 I am Syed Imran Tirmizi, a proficient MERN stack developer with
                 a solid track record of creating robust, scalable, and efficient
                 web applications. Leveraging my expertise in MongoDB,
@@ -168,7 +168,7 @@ function App() {
                 quality and innovation stands out, making me a valuable asset in
                 the web development community.
               </p>
-            </div>
+            </aside>
             <div className="w-1/2 max-xl:w-full flex gap-10 max-sm:gap-4 justify-center items-center">
               <div className="flex flex-col gap-10">
                 {languagecol1.map((value, index) => {
@@ -237,19 +237,166 @@ function App() {
           </div>
         </section>
         <section
-          className={`h-full min-h-screen flex flex-col items-center pt-16 transition-all  duration-1000 relative ${
+          className={`flex flex-col items-center pt-16 transition-all  duration-1000 relative ${
             inView3 ? "opacity-100 " : "opacity-0"
           }`}
           ref={mergeRefs(ref3, project)}
         >
-          <p className="text-6xl font-heading underline-offset-4 my-16  text-rich_black flex gap-2 relative z-10">
-            <div className="absolute bottom-0 -right-7 w-[95%] h-5 bg-silver_lake_blue -z-20 "></div>
+          <h1 className="text-6xl font-heading underline-offset-4 mt-16 mb-32  text-rich_black flex gap-2 relative z-10">
+            <span className="absolute bottom-0 -right-7 w-[95%] h-5 bg-silver_lake_blue -z-20 "></span>
             <div className="absolute bottom-0 -right-10 rounded-full w-2 h-2 bg-silver_lake_blue -z-20 "></div>
             Projects
-            <div className="absolute text-6xl font-heading top-0 -right-1 -z-10  text-rich_black-900">
+            <h2 className="absolute text-6xl font-heading top-0 -right-1 -z-10  text-rich_black-900">
               Projects
-            </div>
-          </p>
+            </h2>
+          </h1>
+          <div className="w-full relative z-20 flex justify-start lg:pl-12 xl:pl-24 mb-32">
+            <a
+              href="https://productappsit.netlify.app/"
+              className=" h-full  hover:scale-95 transition-all"
+              target="_blank"
+            >
+              <div className="w-[80%] h-[40rem] max-lg:h-[20rem] transition-all bg-silver_lake_blue flex justify-start items-center relative">
+                <img src="/images/capture.png" className="w-[85%]" alt="" />
+                <span className="absolute w-full h-[3px] bg-platinum top-1"></span>
+                <span className="absolute w-full h-[3px] bg-platinum top-3"></span>
+                <span className="absolute w-full h-[3px] bg-platinum top-5"></span>
+                <span className="absolute w-[3px] h-full bg-platinum right-1"></span>
+                <span className="absolute w-[3px] h-full bg-platinum right-3"></span>
+                <span className="absolute w-[3px] h-full bg-platinum right-5"></span>
+              </div>
+            </a>
+            <section className="relative w-[30%] max-lg:h-[20rem]">
+              <div className="absolute xl:-left-[22rem] max-xl:-left-[12rem] lg:top-[8rem] gap-5 flex flex-col max-sm:bg-rich_black/15 rounded-lg max-lg:p-2 lg:pr-62">
+                <h1 className="font-heading text-5xl max-lg:text-2xl text-rich_black">
+                  E-Commerce Website
+                </h1>
+                <p className="font-maintext text-lg max-lg:text-base text-oxford_blue">
+                  Products to buy with authentication through firebase, using
+                  API's on React, Node.js
+                </p>
+                <a
+                  href="https://productappsit.netlify.app/"
+                  target="_blank"
+                  className="py-2 px-8 max-lg:px-4 w-fit font-subheading relative transition-all duration-500 z-20 group animate-fade-down animate-once animate-duration-[2000ms] animate-ease-in-out "
+                >
+                  <p className="text-xl max-lg:text-base text-yinmn_blue transition-colors duration-[350ms] z-20 group-hover:text-platinum">
+                    Live App
+                  </p>
+                  <span className="w-full h-[2px] absolute  bottom-0 left-0 ease-in-out transition-all duration-[350ms] group-hover:h-full bg-yinmn_blue -z-10"></span>
+                </a>
+                <a
+                  href="https://github.com/syedimrantirmizi/product-app"
+                  target="_blank"
+                  className="py-2 px-8 max-lg:px-4 w-fit font-subheading relative transition-all duration-500 z-20 group animate-fade-down animate-once animate-duration-[2000ms] animate-ease-in-out "
+                >
+                  <p className="text-xl max-lg:text-base text-yinmn_blue transition-colors duration-[350ms] z-20 group-hover:text-platinum">
+                    Learn more
+                  </p>
+                  <span className="w-full h-[2px] absolute  bottom-0 left-0 ease-in-out transition-all duration-[350ms]  group-hover:h-full bg-yinmn_blue -z-10"></span>
+                </a>
+              </div>
+            </section>
+          </div>
+          <div className="w-full relative z-20 flex justify-end lg:pr-12 xl:pr-24 mb-32">
+            <section className="relative w-[30%] max-lg:h-[20rem]">
+              <div className="absolute xl:-right-[24rem] max-xl:-right-[12rem] lg:top-[8rem] gap-5 flex flex-col max-sm:bg-rich_black/15 rounded-lg max-lg:p-2 lg:pl-32 z-10">
+                <h1 className="font-heading text-5xl max-lg:text-2xl text-rich_black">
+                  Attendance Application
+                </h1>
+                <p className="font-maintext text-lg max-lg:text-base  text-oxford_blue">
+                  Role-Based Application firebase API's, made on react with the help of Tailwind.
+                
+                </p>
+                <a
+                  href="https://attendancesit.vercel.app/"
+                  target="_blank"
+                  className="py-2 px-8 max-lg:px-4 w-fit font-subheading relative transition-all duration-500 z-20 group animate-fade-down animate-once animate-duration-[2000ms] animate-ease-in-out "
+                >
+                  <p className="text-xl max-lg:text-base text-yinmn_blue transition-colors duration-[350ms] z-20 group-hover:text-platinum">
+                    Live App
+                  </p>
+                  <span className="w-full h-[2px] absolute  bottom-0 right-0 ease-in-out transition-all duration-[350ms] group-hover:h-full bg-yinmn_blue -z-10"></span>
+                </a>
+                <a
+                  href="https://github.com/syedimrantirmizi/attendanceApp/tree/master"
+                  target="_blank"
+                  className="py-2 px-8 max-lg:px-4 w-fit font-subheading relative transition-all duration-500 z-20 group animate-fade-down animate-once animate-duration-[2000ms] animate-ease-in-out "
+                >
+                  <p className="text-xl max-lg:text-base text-yinmn_blue transition-colors duration-[350ms] z-20 group-hover:text-platinum">
+                    Learn more
+                  </p>
+                  <span className="w-full h-[2px] absolute  bottom-0 right-0 ease-in-out transition-all duration-[350ms]  group-hover:h-full bg-yinmn_blue -z-10"></span>
+                </a>
+              </div>
+            </section>
+            <a
+              href="https://attendancesit.vercel.app/"
+              className=" h-full hover:scale-95 transition-all flex justify-end"
+              target="_blank"
+            >
+              <div className="w-[80%] h-[40rem] max-lg:h-[20rem] transition-all bg-silver_lake_blue flex justify-end items-center relative">
+                <img
+                  src="/images/attendanceapp.gif"
+                  className="w-[90rem] lg:pl-52 max-lg:pl-16 max-lg:w-[40rem]"
+                  alt=""
+                />
+                <span className="absolute w-full h-[3px] bg-platinum top-1"></span>
+                <span className="absolute w-full h-[3px] bg-platinum top-3"></span>
+                <span className="absolute w-full h-[3px] bg-platinum top-5"></span>
+                <span className="absolute w-[3px] h-full bg-platinum left-1"></span>
+                <span className="absolute w-[3px] h-full bg-platinum left-3"></span>
+                <span className="absolute w-[3px] h-full bg-platinum left-5"></span>
+              </div>
+            </a>
+          </div>
+          <div className="w-full relative z-20 flex justify-start lg:pl-12 xl:pl-24 mb-32">
+            <a
+              href="https://weatherappsit.netlify.app/"
+              className=" h-full  hover:scale-95 transition-all"
+              target="_blank"
+            >
+              <div className="w-[80%] h-[40rem] max-lg:h-[20rem] transition-all bg-silver_lake_blue flex justify-start items-center relative">
+                <img src="/images/weatherapp.png" className="w-[85%]" alt="" />
+                <span className="absolute w-full h-[3px] bg-platinum top-1"></span>
+                <span className="absolute w-full h-[3px] bg-platinum top-3"></span>
+                <span className="absolute w-full h-[3px] bg-platinum top-5"></span>
+                <span className="absolute w-[3px] h-full bg-platinum right-1"></span>
+                <span className="absolute w-[3px] h-full bg-platinum right-3"></span>
+                <span className="absolute w-[3px] h-full bg-platinum right-5"></span>
+              </div>
+            </a>
+            <section className="relative w-[30%] max-lg:h-[20rem]">
+              <div className="absolute xl:-left-[22rem] max-xl:-left-[12rem] lg:top-[8rem] gap-5 flex flex-col max-sm:bg-rich_black/15 rounded-lg max-lg:p-2 lg:pr-32">
+                <h1 className="font-heading text-5xl max-lg:text-2xl text-rich_black">
+                  Weather Application
+                </h1>
+                <p className="font-maintext text-lg max-lg:text-base  text-oxford_blue">
+                  Made with the help of weather API's on Tailwind and React.js
+                </p>
+                <a
+                  href="https://weatherappsit.netlify.app/"
+                  target="_blank"
+                  className="py-2 px-8 max-lg:px-4 w-fit font-subheading relative transition-all duration-500 z-20 group animate-fade-down animate-once animate-duration-[2000ms] animate-ease-in-out "
+                >
+                  <p className="text-xl max-lg:text-base text-yinmn_blue transition-colors duration-[350ms] z-20 group-hover:text-platinum">
+                    Live App
+                  </p>
+                  <span className="w-full h-[2px] absolute  bottom-0 left-0 ease-in-out transition-all duration-[350ms] group-hover:h-full bg-yinmn_blue -z-10"></span>
+                </a>
+                <a
+                  href="https://github.com/syedimrantirmizi/WeatherApp-react"
+                  target="_blank"
+                  className="py-2 px-8 max-lg:px-4 w-fit font-subheading relative transition-all duration-500 z-20 group animate-fade-down animate-once animate-duration-[2000ms] animate-ease-in-out "
+                >
+                  <p className="text-xl max-lg:text-base text-yinmn_blue transition-colors duration-[350ms] z-20 group-hover:text-platinum">
+                    Learn more
+                  </p>
+                  <span className="w-full h-[2px] absolute  bottom-0 left-0 ease-in-out transition-all duration-[350ms]  group-hover:h-full bg-yinmn_blue -z-10"></span>
+                </a>
+              </div>
+            </section>
+          </div>
         </section>
         <section
           className={`h-full min-h-screen flex flex-col items-center pt-16 transition-all  duration-1000 relative ${
