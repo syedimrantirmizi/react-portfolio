@@ -4,7 +4,6 @@ const Dots = () => {
   const colors = ["bg-silver_lake_blue", "bg-oxford_blue-800", "bg-yinmn_blue"];
   const [dots, setDots] = useState([]);
   const totalDots = window.visualViewport.width >= "1200" ? 100 : 50;
-  console.log(totalDots)
   useEffect(() => {
     const generateDots = () => {
       const newDots = [];

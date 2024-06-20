@@ -13,7 +13,6 @@ function App() {
   const about = useRef(null);
   const project = useRef(null);
   const contact = useRef(null);
-  console.log(window.visualViewport.width)
   const [ref, inView] = useInView({
     threshold: 0.2,
   });
