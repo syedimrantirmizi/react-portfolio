@@ -20,7 +20,7 @@ function App() {
     threshold: 0.2,
   });
   const [ref3, inView3] = useInView({
-    threshold: 0.3,
+    threshold: 0.1,
   });
   const [ref4, inView4] = useInView({
     threshold: 0.2,
@@ -411,17 +411,29 @@ function App() {
             </div>
           </h1>
           <p className="text-xl font-subheading text-yinmn_blue w-[45%] max-lg:w-[70%] text-center z-20">
-            Have a question or want to work together? Contact me at these links and
-            I'll get back to you as soon as possible.
+            Have a question or want to work together? Contact me at these links
+            and I'll get back to you as soon as possible.
           </p>
           <div className="z-20 flex justify-around gap-5 pt-16 w-[50%] ">
-            <a target="_blank" href="https://github.com/syedimrantirmizi"  className="flex justify-center">
+            <a
+              target="_blank"
+              href="https://github.com/syedimrantirmizi"
+              className="flex justify-center"
+            >
               <img src="/images/githubicon.png" alt="" className="w-28" />
             </a>
-            <a target="_blank" href="https://www.linkedin.com/in/syedimrantirmizi/"  className="flex justify-center">
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/syedimrantirmizi/"
+              className="flex justify-center"
+            >
               <img src="/images/linkedinicon.png" alt="" className="w-28" />
             </a>
-            <a target="_blank" href="mailto:syedimrantirmizi@gmail.com" className="flex justify-center">
+            <a
+              target="_blank"
+              href="mailto:syedimrantirmizi@gmail.com"
+              className="flex justify-center"
+            >
               <img src="/images/email.png" className="w-24" alt="" />
             </a>
           </div>
