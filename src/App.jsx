@@ -146,26 +146,26 @@ function App() {
             </h2>
           </h1>
           <div className="w-full px-16 flex max-xl:flex-col max-xl:gap-16">
-            <aside className="w-1/2 max-xl:w-full flex flex-col items-center gap-16">
+            <aside className="w-1/2 max-xl:w-full flex flex-col items-center gap-2 max-sm:gap-4 ">
               <img
                 src="/images/imran.jpg"
                 alt=""
-                className="w-52 rounded-full z-20"
+                className="w-52 rounded-full z-20 mb-4"
               />
-              <p className="text-lg font-maintext text-center px-24 max-lg:px-2 text-yinmn_blue z-20">
-                I am Syed Imran Tirmizi, a proficient MERN stack developer with
-                a solid track record of creating robust, scalable, and efficient
-                web applications. Leveraging my expertise in MongoDB,
-                Express.js, React.js, and Node.js, My deep understanding of both
-                front-end and back-end technologies allows me to build
-                full-stack solutions that meet diverse business needs.
-                Passionate about coding and continuous learning, I stay updated
-                with the latest industry trends and best practices, ensuring my
-                skills remain sharp and relevant. Whether developing single-page
-                applications or complex enterprise solutions, my dedication to
-                quality and innovation stands out, making me a valuable asset in
-                the web development community.
-              </p>
+              <ul className="text-left list-disc px-24 max-lg:px-2 ">
+                <li className="text-lg font-maintext pb-4 text-yinmn_blue z-20 ">
+                  MERN stack developer
+                </li>
+                <li className="text-lg font-maintext pb-4 text-yinmn_blue z-20">
+                  <li className="flex">
+                      
+                      Based in Pakistan{" "}
+                  </li>
+                </li>
+                <li className="text-lg font-maintext pb-4 text-yinmn_blue z-20">
+                  Expertise in MongoDB, Express.js, React.js, and Node.js,
+                </li>
+              </ul>
             </aside>
             <div className="w-1/2 max-xl:w-full flex gap-10 max-sm:gap-4 justify-center items-center">
               <div className="flex flex-col gap-10">
@@ -173,7 +173,7 @@ function App() {
                   return (
                     <div
                       key={index}
-                      className="bg-gradient-to-r from-oxford_blue-700 via-oxford_blue-500 to-rich_black-800 p-1 rounded-xl w-44 max-lg:w-24"
+                      className="bg-gradient-to-tr from-oxford_blue-800 via-oxford_blue-900 to-rich_black-800  p-1 rounded-xl w-44 max-lg:w-24"
                     >
                       <div className="bg-platinum rounded-xl flex flex-col justify-center items-center ">
                         <img
@@ -194,7 +194,7 @@ function App() {
                   return (
                     <div
                       key={index}
-                      className="bg-gradient-to-r from-oxford_blue-700 via-oxford_blue-500 to-rich_black-800 p-1 rounded-xl w-44 max-lg:w-24"
+                      className="bg-gradient-to-tr from-oxford_blue-800 via-oxford_blue-900 to-rich_black-800 p-1 rounded-xl w-44 max-lg:w-24"
                     >
                       <div className="bg-platinum rounded-xl flex flex-col justify-center items-center ">
                         <img
@@ -215,7 +215,7 @@ function App() {
                   return (
                     <div
                       key={index}
-                      className="bg-gradient-to-r from-oxford_blue-700 via-oxford_blue-500 to-rich_black-800 p-1 rounded-xl w-44 max-lg:w-24"
+                      className="bg-gradient-to-tr from-oxford_blue-800 via-oxford_blue-900 to-rich_black-800 p-1 rounded-xl w-44 max-lg:w-24"
                     >
                       <div className="bg-platinum rounded-xl flex flex-col justify-center items-center ">
                         <img
@@ -411,17 +411,29 @@ function App() {
             </div>
           </h1>
           <p className="text-xl font-subheading text-yinmn_blue w-[45%] max-lg:w-[70%] text-center z-20">
-            Have a question or want to work together? Contact me at these links and
-            I'll get back to you as soon as possible.
+            Have a question or want to work together? Contact me at these links
+            and I'll get back to you as soon as possible.
           </p>
           <div className="z-20 flex justify-around gap-5 pt-16 w-[50%] ">
-            <a target="_blank" href="https://github.com/syedimrantirmizi"  className="flex justify-center">
+            <a
+              target="_blank"
+              href="https://github.com/syedimrantirmizi"
+              className="flex justify-center"
+            >
               <img src="/images/githubicon.png" alt="" className="w-28" />
             </a>
-            <a target="_blank" href="https://www.linkedin.com/in/syedimrantirmizi/"  className="flex justify-center">
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/syedimrantirmizi/"
+              className="flex justify-center"
+            >
               <img src="/images/linkedinicon.png" alt="" className="w-28" />
             </a>
-            <a target="_blank" href="mailto:syedimrantirmizi@gmail.com" className="flex justify-center">
+            <a
+              target="_blank"
+              href="mailto:syedimrantirmizi@gmail.com"
+              className="flex justify-center"
+            >
               <img src="/images/email.png" className="w-24" alt="" />
             </a>
           </div>
