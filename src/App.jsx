@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useEffect, useRef, useState } from "react";
 import Navbar from "./components/Navbar";
 import { useInView } from "react-intersection-observer";
@@ -248,10 +249,10 @@ function App() {
               Projects
             </h2>
           </h1>
-          <div className="w-full relative z-20 flex justify-start lg:pl-12 xl:pl-24 mb-32">
+          <div className="w-full relative z-20 flex max-sm:flex-col justify-start  lg:pl-12 xl:pl-24 mb-32">
             <a
               href="https://productappsit.netlify.app/"
-              className=" h-full  hover:scale-95 transition-all"
+              className=" h-full max-sm:ml-16  hover:scale-95 transition-all"
               target="_blank"
             >
               <div className="w-[80%] h-[40rem] max-lg:h-[20rem] transition-all bg-silver_lake_blue flex justify-start items-center relative">
@@ -264,8 +265,8 @@ function App() {
                 <span className="absolute w-[3px] h-full bg-platinum right-5"></span>
               </div>
             </a>
-            <section className="relative w-[30%] max-lg:h-[20rem]">
-              <div className="absolute xl:-left-[22rem] max-xl:-left-[12rem] lg:top-[8rem] gap-5 flex flex-col max-sm:bg-rich_black/15 rounded-lg max-lg:p-2 lg:pr-62">
+            <section className="relative w-[30%] max-sm:w-[60%] max-lg:h-[20rem]">
+              <div className="absolute max-sm:left-20 max-sm:top-10 max-sm:w-full xl:-left-[22rem] max-xl:-left-[12rem] lg:top-[8rem] gap-5 flex flex-col rounded-lg max-lg:p-2 lg:pr-62">
                 <h1 className="font-heading text-5xl max-lg:text-2xl text-rich_black">
                   E-Commerce Website
                 </h1>
@@ -296,9 +297,9 @@ function App() {
               </div>
             </section>
           </div>
-          <div className="w-full relative z-20 flex justify-end lg:pr-12 xl:pr-24 mb-32">
-            <section className="relative w-[30%] max-lg:h-[20rem]">
-              <div className="absolute xl:-right-[24rem] max-xl:-right-[12rem] lg:top-[8rem] gap-5 flex flex-col max-sm:bg-rich_black/15 rounded-lg max-lg:p-2 lg:pl-32 z-10">
+          <div className="w-full relative z-20 flex max-sm:flex-col justify-end lg:pr-12 xl:pr-24 mb-32">
+            <section className="relative w-[30%] max-lg:h-[20rem] max-sm:w-[40%]">
+              <div className="absolute max-sm:left-20 max-sm:top-10  xl:-right-[24rem] max-xl:-right-[12rem] lg:top-[8rem] gap-5 flex flex-col rounded-lg max-lg:p-2 lg:pl-32 z-10">
                 <h1 className="font-heading text-5xl max-lg:text-2xl text-rich_black">
                   Attendance Application
                 </h1>
@@ -330,10 +331,10 @@ function App() {
             </section>
             <a
               href="https://attendancesit.vercel.app/"
-              className=" h-full hover:scale-95 transition-all flex justify-end"
+              className=" h-full hover:scale-95 transition-all max-sm:mr-16 sm:flex sm:justify-end"
               target="_blank"
             >
-              <div className="w-[80%] h-[40rem] max-lg:h-[20rem] transition-all bg-silver_lake_blue flex justify-end items-center relative">
+              <div className="w-[80%] h-[40rem] max-sm:ml-16 max-lg:h-[20rem] transition-all bg-silver_lake_blue flex justify-end items-center relative">
                 <img
                   src="/images/attendanceapp.gif"
                   className="w-[90rem] lg:pl-52 max-lg:pl-16 max-lg:w-[40rem]"
@@ -348,10 +349,10 @@ function App() {
               </div>
             </a>
           </div>
-          <div className="w-full relative z-20 flex justify-start lg:pl-12 xl:pl-24 mb-32">
+          <div className="w-full relative z-20 flex max-sm:flex-col justify-start lg:pl-12 xl:pl-24 mb-32">
             <a
               href="https://weatherappsit.netlify.app/"
-              className=" h-full  hover:scale-95 transition-all"
+              className=" h-full max-sm:ml-16  hover:scale-95 transition-all"
               target="_blank"
             >
               <div className="w-[80%] h-[40rem] max-lg:h-[20rem] transition-all bg-silver_lake_blue flex justify-start items-center relative">
@@ -364,8 +365,8 @@ function App() {
                 <span className="absolute w-[3px] h-full bg-platinum right-5"></span>
               </div>
             </a>
-            <section className="relative w-[30%] max-lg:h-[20rem]">
-              <div className="absolute xl:-left-[22rem] max-xl:-left-[12rem] lg:top-[8rem] gap-5 flex flex-col max-sm:bg-rich_black/15 rounded-lg max-lg:p-2 ">
+            <section className="relative w-[30%] max-lg:h-[20rem] max-sm:w-[60%]">
+              <div className="absolute max-sm:left-20 max-sm:top-10 max-sm:w-full xl:-left-[22rem] max-xl:-left-[12rem] lg:top-[8rem] gap-5 flex flex-col rounded-lg max-lg:p-2 ">
                 <h1 className="font-heading text-5xl max-lg:text-2xl text-rich_black">
                   Weather Application
                 </h1>
