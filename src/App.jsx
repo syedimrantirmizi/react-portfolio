@@ -20,7 +20,7 @@ function App() {
     threshold: 0.2,
   });
   const [ref3, inView3] = useInView({
-    threshold: 0.3,
+    threshold: 0.1,
   });
   const [ref4, inView4] = useInView({
     threshold: 0.2,
