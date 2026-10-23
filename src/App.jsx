@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import { useInView } from "react-intersection-observer";
 import mergeRefs from "merge-refs";
 import Dots from "./components/Dots";
+import projects from "./data/projects";
 
 function App() {
   const [colored1, setColored1] = useState(false);
@@ -32,21 +33,22 @@ function App() {
       behavior: "smooth",
     });
   };
+  const navOffset = 72;
   const scrollToAbout = () => {
     window.scrollTo({
-      top: about.current.offsetTop,
+      top: Math.max(about.current.offsetTop - navOffset, 0),
       behavior: "smooth",
     });
   };
   const scrollToProject = () => {
     window.scrollTo({
-      top: project.current.offsetTop,
+      top: Math.max(project.current.offsetTop - navOffset, 0),
       behavior: "smooth",
     });
   };
   const scrollToContact = () => {
     window.scrollTo({
-      top: contact.current.offsetTop,
+      top: Math.max(contact.current.offsetTop - navOffset, 0),
       behavior: "smooth",
     });
   };
@@ -69,57 +71,56 @@ function App() {
     }
   }, [inView, inView2, inView3, inView4]);
   const languagecol1 = [
-    { name: "HTML", image: "html", class: "w-24 p-2 max-lg:w-12" },
-    { name: "REACT", image: "react", class: "w-24 max-lg:w-12 " },
-    { name: "css", image: "css", class: "w-24 max-lg:w-12 " },
+    { name: "HTML", image: "html", class: "w-20 p-2 sm:w-24 max-lg:w-12" },
+    { name: "REACT", image: "react", class: "w-20 sm:w-24 max-lg:w-12" },
+    { name: "css", image: "css", class: "w-20 sm:w-24 max-lg:w-12" },
   ];
   const languagecol2 = [
-    { name: "TAILWIND", image: "tailwind", class: "w-24 max-lg:w-12 " },
-    { name: "NODE.JS", image: "nodejs", class: "w-24 p-2 max-lg:w-12" },
-    { name: "EXPRESS.JS", image: "expressjs", class: "p-2" },
-    { name: "SASS", image: "sass", class: "w-36 p-2 max-lg:w-18" },
+    { name: "TAILWIND", image: "tailwind", class: "w-20 sm:w-24 max-lg:w-12" },
+    { name: "NODE.JS", image: "nodejs", class: "w-20 p-2 sm:w-24 max-lg:w-12" },
+    { name: "EXPRESS.JS", image: "expressjs", class: "p-2 w-16 sm:w-auto" },
+    { name: "SASS", image: "sass", class: "w-24 p-2 sm:w-36 max-lg:w-16" },
   ];
   const languagecol3 = [
-    { name: "MUI", image: "MUI", class: "w-24 p-2 max-lg:w-12" },
-    { name: "MONGODB", image: "mongodb", class: "w-24 p-2 max-lg:w-12" },
-    { name: "JAVASCRIPT", image: "javascript", class: "w-24 max-lg:w-12 " },
+    { name: "MUI", image: "MUI", class: "w-20 p-2 sm:w-24 max-lg:w-12" },
+    { name: "MONGODB", image: "mongodb", class: "w-20 p-2 sm:w-24 max-lg:w-12" },
+    { name: "JAVASCRIPT", image: "javascript", class: "w-20 sm:w-24 max-lg:w-12" },
   ];
   return (
     <>
       <div className="bg-platinum h-full min-h-screen relative w-full">
         <div
-          className="h-screen flex justify-center w-full items-between overflow-hidden relative"
+          className="min-h-screen flex justify-center w-full items-center relative"
           ref={mergeRefs(ref, home)}
         >
-          <div className="w-full h-full relative bg-platinum">
-            <div className="w-full h-[85%] flex justify-center px-24 gap-5 items-center flex-col text-rich_black font-heading text-6xl ">
-              <div className="text-6xl font-heading  underline-offset-4 flex gap-3 max-lg:flex-col max-lg:text-center">
+          <div className="w-full min-h-screen relative bg-platinum flex flex-col">
+            <img
+              src="/wave.svg"
+              className="w-full absolute -top-2 rotate-180 z-20 pointer-events-none"
+              alt=""
+            />
+            <div className="w-full flex-1 flex justify-center px-4 sm:px-8 md:px-16 lg:px-24 gap-4 sm:gap-5 items-center flex-col text-rich_black font-heading">
+              <div className="text-3xl sm:text-5xl lg:text-6xl font-heading underline-offset-4 flex flex-col sm:flex-row gap-1 sm:gap-3 text-center sm:text-left max-w-full">
                 <h1 className="text-silver_lake_blue animate-fade-right animate-once animate-duration-[2000ms] animate-ease-in-out z-20">
                   Hi, I am
                 </h1>
-                <h1 className="animate-fade-left animate-once animate-duration-[2000ms] animate-ease-in-out z-20">
+                <h1 className="animate-fade-left animate-once animate-duration-[2000ms] animate-ease-in-out z-20 break-words">
                   Syed Imran Tirmizi
                 </h1>
               </div>
-              <h2 className="text-xl text-silver_lake_blue font-maintext text-center animate-fade-up animate-once animate-duration-[5000ms] animate-ease-in-out z-20">
+              <h2 className="text-base sm:text-xl text-silver_lake_blue font-maintext text-center animate-fade-up animate-once animate-duration-[5000ms] animate-ease-in-out z-20 px-2">
                 A MERN Stack Developer
               </h2>
               <button
-                className="py-2 px-16 rounded font-subheading relative transition-all duration-500 z-20 group animate-fade-down animate-once animate-duration-[2000ms] animate-ease-in-out "
+                className="py-2 px-8 sm:px-16 rounded font-subheading relative transition-all duration-500 z-20 group animate-fade-down animate-once animate-duration-[2000ms] animate-ease-in-out"
                 onClick={scrollToAbout}
               >
-                <p className="text-xl text-yinmn_blue transition-all duration-500 z-20 group-hover:text-[24px] ">
+                <p className="text-lg sm:text-xl text-yinmn_blue transition-all duration-500 z-20 group-hover:text-[24px]">
                   View my work
                 </p>
                 <span className="w-full h-[2px] absolute rounded bottom-0 left-0 ease-in-out transition-all duration-500 group-hover:w-[2px] group-hover:h-full bg-yinmn_blue -z-10"></span>
-                <img src="" alt="" />
               </button>
             </div>
-            <img
-              src="/wave.svg"
-              className="w-full absolute -top-2 rotate-180 z-20"
-              alt=""
-            />
           </div>
         </div>
         <Navbar
@@ -133,309 +134,209 @@ function App() {
           scrollToContact={scrollToContact}
         />
         <section
-          className={`h-full flex flex-col items-center pt-16 transition-all  duration-[3000ms] relative ${
+          className={`h-full flex flex-col items-center scroll-mt-20 pt-10 sm:pt-16 px-4 sm:px-8 transition-all duration-[3000ms] relative ${
             inView2 ? "opacity-100" : "opacity-0"
           }`}
           ref={mergeRefs(ref2, about)}
         >
-          <h1 className="text-6xl max-sm:text-5xl font-heading underline-offset-4 my-16  text-rich_black flex gap-2 relative z-20">
-            <span className="absolute bottom-0 -right-7 w-[95%] h-5 bg-silver_lake_blue -z-20 "></span>
-            <div className="absolute bottom-0 -right-10 rounded-full w-2 h-2 bg-silver_lake_blue -z-20 "></div>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading underline-offset-4 my-10 sm:my-16 text-rich_black flex gap-2 relative z-20">
+            <span className="absolute bottom-0 -right-7 w-[95%] h-5 bg-silver_lake_blue -z-20"></span>
+            <span className="absolute bottom-0 -right-10 rounded-full w-2 h-2 bg-silver_lake_blue -z-20"></span>
             About
-            <h2 className="absolute text-6xl max-sm:text-5xl  font-heading top-0 -right-1 -z-10  text-rich_black-900">
+            <span className="absolute text-4xl sm:text-5xl lg:text-6xl font-heading top-0 -right-1 -z-10 text-rich_black-900">
               About
-            </h2>
+            </span>
           </h1>
-          <div className="w-full px-16 flex max-xl:flex-col max-xl:gap-16">
-            <aside className="w-1/2 max-xl:w-full flex flex-col items-center gap-2 max-sm:gap-4 ">
+          <div className="w-full max-w-6xl flex flex-col xl:flex-row xl:gap-8 gap-12">
+            <aside className="w-full xl:w-1/2 flex flex-col items-center gap-2 max-sm:gap-4">
               <img
                 src="/images/imran.jpg"
-                alt=""
-                className="w-52 rounded-full z-20 mb-4"
+                alt="Syed Imran Tirmizi"
+                className="w-36 h-36 sm:w-52 sm:h-52 rounded-full z-20 mb-4 object-cover object-top"
               />
-              <ul className="text-left list-disc px-24 max-lg:px-2 ">
-                <li className="text-lg font-maintext pb-4 text-yinmn_blue z-20 ">
+              <ul className="text-left list-disc px-4 sm:px-10 lg:px-16 max-w-xl">
+                <li className="text-base sm:text-lg font-maintext pb-4 text-yinmn_blue z-20">
                   MERN stack developer
                 </li>
-                <li className="text-lg font-maintext pb-4 text-yinmn_blue z-20">
-                  <li className="flex">
-                      
-                      Based in Pakistan{" "}
-                  </li>
+                <li className="text-base sm:text-lg font-maintext pb-4 text-yinmn_blue z-20">
+                  Based in Pakistan
                 </li>
-                <li className="text-lg font-maintext pb-4 text-yinmn_blue z-20">
-                  Expertise in MongoDB, Express.js, React.js, and Node.js,
+                <li className="text-base sm:text-lg font-maintext pb-4 text-yinmn_blue z-20">
+                  Expertise in MongoDB, Express.js, React.js, and Node.js
                 </li>
               </ul>
             </aside>
-            <div className="w-1/2 max-xl:w-full flex gap-10 max-sm:gap-4 justify-center items-center">
-              <div className="flex flex-col gap-10">
-                {languagecol1.map((value, index) => {
-                  return (
-                    <div
-                      key={index}
-                      className="bg-gradient-to-tr from-oxford_blue-800 via-oxford_blue-900 to-rich_black-800  p-1 rounded-xl w-44 max-lg:w-24"
-                    >
-                      <div className="bg-platinum rounded-xl flex flex-col justify-center items-center ">
-                        <img
-                          src={`/images/${value.image}.png`}
-                          className={`${value.class} z-20`}
-                          alt=""
-                        />
-                        <p className="text-lg font-maintext max-lg:text-sm   text-center text-oxford_blue z-20">
-                          {`${value.name}`}
-                        </p>
+            <div className="w-full xl:w-1/2 flex gap-3 sm:gap-6 lg:gap-10 justify-center items-start">
+              {[languagecol1, languagecol2, languagecol3].map((column, colIndex) => (
+                <div key={colIndex} className="flex flex-col gap-4 sm:gap-8 lg:gap-10">
+                  {column.map((value) => {
+                    return (
+                      <div
+                        key={value.name}
+                        className="bg-gradient-to-tr from-oxford_blue-800 via-oxford_blue-900 to-rich_black-800 p-1 rounded-xl w-[5.5rem] sm:w-28 lg:w-44"
+                      >
+                        <div className="bg-platinum rounded-xl flex flex-col justify-center items-center min-h-[5.5rem] sm:min-h-[6.5rem] lg:min-h-0 py-2">
+                          <img
+                            src={`/images/${value.image}.png`}
+                            className={`${value.class} z-20`}
+                            alt={value.name}
+                          />
+                          <p className="text-[10px] sm:text-sm lg:text-lg font-maintext text-center text-oxford_blue z-20 px-1 leading-tight">
+                            {value.name}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  );
-                })}
-              </div>
-              <div className="flex flex-col gap-10">
-                {languagecol2.map((value, index) => {
-                  return (
-                    <div
-                      key={index}
-                      className="bg-gradient-to-tr from-oxford_blue-800 via-oxford_blue-900 to-rich_black-800 p-1 rounded-xl w-44 max-lg:w-24"
-                    >
-                      <div className="bg-platinum rounded-xl flex flex-col justify-center items-center ">
-                        <img
-                          src={`/images/${value.image}.png`}
-                          className={`${value.class} z-20`}
-                          alt=""
-                        />
-                        <p className="text-lg max-lg:text-sm  font-maintext text-center text-oxford_blue z-20">
-                          {`${value.name}`}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-              <div className="flex flex-col gap-10">
-                {languagecol3.map((value, index) => {
-                  return (
-                    <div
-                      key={index}
-                      className="bg-gradient-to-tr from-oxford_blue-800 via-oxford_blue-900 to-rich_black-800 p-1 rounded-xl w-44 max-lg:w-24"
-                    >
-                      <div className="bg-platinum rounded-xl flex flex-col justify-center items-center ">
-                        <img
-                          src={`/images/${value.image}.png`}
-                          className={`${value.class} z-20`}
-                          alt=""
-                        />
-                        <p className="text-lg font-maintext max-lg:text-sm   text-center text-oxford_blue z-20">
-                          {`${value.name}`}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
+                    );
+                  })}
+                </div>
+              ))}
             </div>
           </div>
         </section>
         <section
-          className={`flex flex-col items-center pt-16 transition-all  duration-1000 relative ${
-            inView3 ? "opacity-100 " : "opacity-0"
+          className={`flex flex-col items-center scroll-mt-20 pt-10 sm:pt-16 px-4 sm:px-8 lg:px-12 transition-all duration-1000 relative ${
+            inView3 ? "opacity-100" : "opacity-0"
           }`}
           ref={mergeRefs(ref3, project)}
         >
-          <h1 className="text-6xl max-sm:text-5xl font-heading underline-offset-4 mt-16 mb-32  text-rich_black flex gap-2 relative z-20">
-            <span className="absolute bottom-0 -right-7 w-[95%] h-5 bg-silver_lake_blue -z-20 "></span>
-            <div className="absolute bottom-0 -right-10 rounded-full w-2 h-2 bg-silver_lake_blue -z-20 "></div>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading underline-offset-4 mt-10 sm:mt-16 mb-12 sm:mb-20 text-rich_black flex gap-2 relative z-20">
+            <span className="absolute bottom-0 -right-7 w-[95%] h-5 bg-silver_lake_blue -z-20"></span>
+            <span className="absolute bottom-0 -right-10 rounded-full w-2 h-2 bg-silver_lake_blue -z-20"></span>
             Projects
-            <h2 className="absolute text-6xl max-sm:text-5xl font-heading top-0 -right-1 -z-10  text-rich_black-900">
+            <span className="absolute text-4xl sm:text-5xl lg:text-6xl font-heading top-0 -right-1 -z-10 text-rich_black-900">
               Projects
-            </h2>
+            </span>
           </h1>
-          <div className="w-full relative z-20 flex max-sm:flex-col justify-start  lg:pl-12 xl:pl-24 mb-32">
-            <a
-              href="https://productappsit.netlify.app/"
-              className=" h-full max-sm:ml-16  hover:scale-95 transition-all"
-              target="_blank"
-            >
-              <div className="w-[80%] h-[40rem] max-lg:h-[20rem] transition-all bg-silver_lake_blue flex justify-start items-center relative">
-                <img src="/images/capture.png" className="w-[85%]" alt="" />
-                <span className="absolute w-full h-[3px] bg-platinum top-1"></span>
-                <span className="absolute w-full h-[3px] bg-platinum top-3"></span>
-                <span className="absolute w-full h-[3px] bg-platinum top-5"></span>
-                <span className="absolute w-[3px] h-full bg-platinum right-1"></span>
-                <span className="absolute w-[3px] h-full bg-platinum right-3"></span>
-                <span className="absolute w-[3px] h-full bg-platinum right-5"></span>
-              </div>
-            </a>
-            <section className="relative w-[30%] max-sm:w-[60%] max-lg:h-[20rem]">
-              <div className="absolute max-sm:left-20 max-sm:top-10 max-sm:w-full xl:-left-[22rem] max-xl:-left-[12rem] lg:top-[8rem] gap-5 flex flex-col rounded-lg max-lg:p-2 lg:pr-62">
-                <h1 className="font-heading text-5xl max-lg:text-2xl text-rich_black">
-                  E-Commerce Website
-                </h1>
-                <p className="font-maintext text-lg max-lg:text-base text-oxford_blue">
-                  Products to buy with authentication through firebase, using
-                  API's on React, Node.js
-                </p>
-                <a
-                  href="https://productappsit.netlify.app/"
-                  target="_blank"
-                  className="py-2 px-8 max-lg:px-4 w-fit font-subheading relative transition-all duration-500 z-20 group animate-fade-down animate-once animate-duration-[2000ms] animate-ease-in-out "
+          <div className="w-full max-w-6xl flex flex-col gap-16 sm:gap-24 mb-16">
+            {projects.map((item, index) => {
+              const isEven = index % 2 === 1;
+              const underlineClass = isEven
+                ? "absolute w-full h-[2px] bottom-0 right-0 ease-in-out transition-all duration-[350ms] group-hover:h-full bg-yinmn_blue -z-10"
+                : "absolute w-full h-[2px] bottom-0 left-0 ease-in-out transition-all duration-[350ms] group-hover:h-full bg-yinmn_blue -z-10";
+              return (
+                <article
+                  key={item.title}
+                  className={`w-full relative z-20 flex flex-col lg:flex-row items-center gap-6 lg:gap-10 ${
+                    isEven ? "lg:flex-row-reverse" : ""
+                  }`}
                 >
-                  <p className="text-xl max-lg:text-base text-yinmn_blue transition-colors duration-[350ms] z-20 group-hover:text-platinum">
-                    Live App
-                  </p>
-                  <span className="w-full h-[2px] absolute  bottom-0 left-0 ease-in-out transition-all duration-[350ms] group-hover:h-full bg-yinmn_blue -z-10"></span>
-                </a>
-                <a
-                  href="https://github.com/syedimrantirmizi/product-app"
-                  target="_blank"
-                  className="py-2 px-8 max-lg:px-4 w-fit font-subheading relative transition-all duration-500 z-20 group animate-fade-down animate-once animate-duration-[2000ms] animate-ease-in-out "
-                >
-                  <p className="text-xl max-lg:text-base text-yinmn_blue transition-colors duration-[350ms] z-20 group-hover:text-platinum">
-                    Learn more
-                  </p>
-                  <span className="w-full h-[2px] absolute  bottom-0 left-0 ease-in-out transition-all duration-[350ms]  group-hover:h-full bg-yinmn_blue -z-10"></span>
-                </a>
-              </div>
-            </section>
-          </div>
-          <div className="w-full relative z-20 flex max-sm:flex-col justify-end lg:pr-12 xl:pr-24 mb-32">
-            <section className="relative w-[30%] max-lg:h-[20rem] max-sm:w-[40%]">
-              <div className="absolute max-sm:left-20 max-sm:top-10  xl:-right-[24rem] max-xl:-right-[12rem] lg:top-[8rem] gap-5 flex flex-col rounded-lg max-lg:p-2 lg:pl-32 z-10">
-                <h1 className="font-heading text-5xl max-lg:text-2xl text-rich_black">
-                  Attendance Application
-                </h1>
-                <p className="font-maintext text-lg max-lg:text-base  text-oxford_blue">
-                  Role-Based Application firebase API's, made on react with the
-                  help of Tailwind.
-                </p>
-                <a
-                  href="https://attendancesit.vercel.app/"
-                  target="_blank"
-                  className="py-2 px-8 max-lg:px-4 w-fit font-subheading relative transition-all duration-500 z-20 group animate-fade-down animate-once animate-duration-[2000ms] animate-ease-in-out "
-                >
-                  <p className="text-xl max-lg:text-base text-yinmn_blue transition-colors duration-[350ms] z-20 group-hover:text-platinum">
-                    Live App
-                  </p>
-                  <span className="w-full h-[2px] absolute  bottom-0 right-0 ease-in-out transition-all duration-[350ms] group-hover:h-full bg-yinmn_blue -z-10"></span>
-                </a>
-                <a
-                  href="https://github.com/syedimrantirmizi/attendanceApp/tree/master"
-                  target="_blank"
-                  className="py-2 px-8 max-lg:px-4 w-fit font-subheading relative transition-all duration-500 z-20 group animate-fade-down animate-once animate-duration-[2000ms] animate-ease-in-out "
-                >
-                  <p className="text-xl max-lg:text-base text-yinmn_blue transition-colors duration-[350ms] z-20 group-hover:text-platinum">
-                    Learn more
-                  </p>
-                  <span className="w-full h-[2px] absolute  bottom-0 right-0 ease-in-out transition-all duration-[350ms]  group-hover:h-full bg-yinmn_blue -z-10"></span>
-                </a>
-              </div>
-            </section>
-            <a
-              href="https://attendancesit.vercel.app/"
-              className=" h-full hover:scale-95 transition-all max-sm:mr-16 sm:flex sm:justify-end"
-              target="_blank"
-            >
-              <div className="w-[80%] h-[40rem] max-sm:ml-16 max-lg:h-[20rem] transition-all bg-silver_lake_blue flex justify-end items-center relative">
-                <img
-                  src="/images/attendanceapp.gif"
-                  className="w-[90rem] lg:pl-52 max-lg:pl-16 max-lg:w-[40rem]"
-                  alt=""
-                />
-                <span className="absolute w-full h-[3px] bg-platinum top-1"></span>
-                <span className="absolute w-full h-[3px] bg-platinum top-3"></span>
-                <span className="absolute w-full h-[3px] bg-platinum top-5"></span>
-                <span className="absolute w-[3px] h-full bg-platinum left-1"></span>
-                <span className="absolute w-[3px] h-full bg-platinum left-3"></span>
-                <span className="absolute w-[3px] h-full bg-platinum left-5"></span>
-              </div>
-            </a>
-          </div>
-          <div className="w-full relative z-20 flex max-sm:flex-col justify-start lg:pl-12 xl:pl-24 mb-32">
-            <a
-              href="https://weatherappsit.netlify.app/"
-              className=" h-full max-sm:ml-16  hover:scale-95 transition-all"
-              target="_blank"
-            >
-              <div className="w-[80%] h-[40rem] max-lg:h-[20rem] transition-all bg-silver_lake_blue flex justify-start items-center relative">
-                <img src="/images/weatherapp.png" className="w-[85%]" alt="" />
-                <span className="absolute w-full h-[3px] bg-platinum top-1"></span>
-                <span className="absolute w-full h-[3px] bg-platinum top-3"></span>
-                <span className="absolute w-full h-[3px] bg-platinum top-5"></span>
-                <span className="absolute w-[3px] h-full bg-platinum right-1"></span>
-                <span className="absolute w-[3px] h-full bg-platinum right-3"></span>
-                <span className="absolute w-[3px] h-full bg-platinum right-5"></span>
-              </div>
-            </a>
-            <section className="relative w-[30%] max-lg:h-[20rem] max-sm:w-[60%]">
-              <div className="absolute max-sm:left-20 max-sm:top-10 max-sm:w-full xl:-left-[22rem] max-xl:-left-[12rem] lg:top-[8rem] gap-5 flex flex-col rounded-lg max-lg:p-2 ">
-                <h1 className="font-heading text-5xl max-lg:text-2xl text-rich_black">
-                  Weather Application
-                </h1>
-                <p className="font-maintext text-lg max-lg:text-base  text-oxford_blue">
-                  Made with the help of weather API's on Tailwind and React.js
-                </p>
-                <a
-                  href="https://weatherappsit.netlify.app/"
-                  target="_blank"
-                  className="py-2 px-8 max-lg:px-4 w-fit font-subheading relative transition-all duration-500 z-20 group animate-fade-down animate-once animate-duration-[2000ms] animate-ease-in-out "
-                >
-                  <p className="text-xl max-lg:text-base text-yinmn_blue transition-colors duration-[350ms] z-20 group-hover:text-platinum">
-                    Live App
-                  </p>
-                  <span className="w-full h-[2px] absolute  bottom-0 left-0 ease-in-out transition-all duration-[350ms] group-hover:h-full bg-yinmn_blue -z-10"></span>
-                </a>
-                <a
-                  href="https://github.com/syedimrantirmizi/WeatherApp-react"
-                  target="_blank"
-                  className="py-2 px-8 max-lg:px-4 w-fit font-subheading relative transition-all duration-500 z-20 group animate-fade-down animate-once animate-duration-[2000ms] animate-ease-in-out "
-                >
-                  <p className="text-xl max-lg:text-base text-yinmn_blue transition-colors duration-[350ms] z-20 group-hover:text-platinum">
-                    Learn more
-                  </p>
-                  <span className="w-full h-[2px] absolute  bottom-0 left-0 ease-in-out transition-all duration-[350ms]  group-hover:h-full bg-yinmn_blue -z-10"></span>
-                </a>
-              </div>
-            </section>
+                  <a
+                    href={item.live}
+                    className="w-full lg:w-[58%] shrink-0 hover:scale-[0.98] transition-transform duration-300"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <div className="w-full aspect-[16/10] bg-silver_lake_blue overflow-hidden relative rounded-md shadow-lg shadow-oxford_blue/20">
+                      <img
+                        src={item.image}
+                        className="w-full h-full object-cover object-top"
+                        alt={item.title}
+                      />
+                      <span className="absolute w-full h-[3px] bg-platinum top-1"></span>
+                      <span className="absolute w-full h-[3px] bg-platinum top-3"></span>
+                      <span className="absolute w-full h-[3px] bg-platinum top-5"></span>
+                      {isEven ? (
+                        <>
+                          <span className="absolute w-[3px] h-full bg-platinum left-1"></span>
+                          <span className="absolute w-[3px] h-full bg-platinum left-3"></span>
+                          <span className="absolute w-[3px] h-full bg-platinum left-5"></span>
+                        </>
+                      ) : (
+                        <>
+                          <span className="absolute w-[3px] h-full bg-platinum right-1"></span>
+                          <span className="absolute w-[3px] h-full bg-platinum right-3"></span>
+                          <span className="absolute w-[3px] h-full bg-platinum right-5"></span>
+                        </>
+                      )}
+                    </div>
+                  </a>
+                  <div
+                    className={`w-full lg:flex-1 flex flex-col gap-4 sm:gap-5 ${
+                      isEven ? "lg:items-end lg:text-right" : "lg:items-start"
+                    }`}
+                  >
+                    <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl text-rich_black leading-tight">
+                      {item.title}
+                    </h2>
+                    <p className="font-maintext text-base sm:text-lg text-oxford_blue leading-relaxed max-w-xl">
+                      {item.description}
+                    </p>
+                    <div
+                      className={`flex flex-wrap gap-3 ${
+                        isEven ? "lg:justify-end" : ""
+                      }`}
+                    >
+                      <a
+                        href={item.live}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="py-2 px-6 sm:px-8 w-fit font-subheading relative transition-all duration-500 z-20 group"
+                      >
+                        <p className="text-base sm:text-xl text-yinmn_blue transition-colors duration-[350ms] z-20 group-hover:text-platinum">
+                          Live App
+                        </p>
+                        <span className={underlineClass}></span>
+                      </a>
+                      <a
+                        href={item.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="py-2 px-6 sm:px-8 w-fit font-subheading relative transition-all duration-500 z-20 group"
+                      >
+                        <p className="text-base sm:text-xl text-yinmn_blue transition-colors duration-[350ms] z-20 group-hover:text-platinum">
+                          Learn more
+                        </p>
+                        <span className={underlineClass}></span>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </section>
         <section
-          className={`h-full min-h-screen flex flex-col items-center pt-16 transition-all  duration-1000 relative ${
-            inView4 ? "opacity-100 " : "opacity-0"
+          className={`h-full min-h-screen flex flex-col items-center scroll-mt-20 pt-10 sm:pt-16 px-4 sm:px-8 pb-24 transition-all duration-1000 relative ${
+            inView4 ? "opacity-100" : "opacity-0"
           }`}
           ref={mergeRefs(ref4, contact)}
         >
-          <h1 className="text-6xl max-sm:text-5xl font-heading underline-offset-4 my-32  text-rich_black flex gap-2 relative z-10">
-            <div className="absolute bottom-0 -right-7 w-[95%] h-5 bg-silver_lake_blue -z-20 "></div>
-            <div className="absolute bottom-0 -right-10 rounded-full w-2 h-2 bg-silver_lake_blue -z-20 "></div>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading underline-offset-4 my-16 sm:my-24 text-rich_black flex gap-2 relative z-10">
+            <span className="absolute bottom-0 -right-7 w-[95%] h-5 bg-silver_lake_blue -z-20"></span>
+            <span className="absolute bottom-0 -right-10 rounded-full w-2 h-2 bg-silver_lake_blue -z-20"></span>
             Contact
-            <div className="absolute text-6xl max-sm:text-5xl font-heading top-0 -right-1 -z-10  text-rich_black-900">
+            <span className="absolute text-4xl sm:text-5xl lg:text-6xl font-heading top-0 -right-1 -z-10 text-rich_black-900">
               Contact
-            </div>
+            </span>
           </h1>
-          <p className="text-xl font-subheading text-yinmn_blue w-[45%] max-lg:w-[70%] text-center z-20">
+          <p className="text-base sm:text-xl font-subheading text-yinmn_blue w-full max-w-xl text-center z-20 px-2">
             Have a question or want to work together? Contact me at these links
             and I'll get back to you as soon as possible.
           </p>
-          <div className="z-20 flex justify-around gap-5 pt-16 w-[50%] ">
+          <div className="z-20 flex justify-center items-center gap-4 sm:gap-8 pt-10 sm:pt-16 w-full max-w-lg">
             <a
               target="_blank"
+              rel="noreferrer"
               href="https://github.com/syedimrantirmizi"
               className="flex justify-center"
             >
-              <img src="/images/githubicon.png" alt="" className="w-28" />
+              <img src="/images/githubicon.png" alt="GitHub" className="w-14 sm:w-20 lg:w-28" />
             </a>
             <a
               target="_blank"
+              rel="noreferrer"
               href="https://www.linkedin.com/in/syedimrantirmizi/"
               className="flex justify-center"
             >
-              <img src="/images/linkedinicon.png" alt="" className="w-28" />
+              <img src="/images/linkedinicon.png" alt="LinkedIn" className="w-14 sm:w-20 lg:w-28" />
             </a>
             <a
               target="_blank"
+              rel="noreferrer"
               href="mailto:syedimrantirmizi@gmail.com"
               className="flex justify-center"
             >
-              <img src="/images/email.png" className="w-24" alt="" />
+              <img src="/images/email.png" className="w-12 sm:w-16 lg:w-24" alt="Email" />
             </a>
           </div>
         </section>
