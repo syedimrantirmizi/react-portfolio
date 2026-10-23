@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 const Dots = () => {
   const colors = ["bg-silver_lake_blue", "bg-oxford_blue-800", "bg-yinmn_blue"];
   const [dots, setDots] = useState([]);
-  const totalDots = window.visualViewport.width >= "1200" ? 100 : 50;
+  const totalDots =
+    typeof window !== "undefined" && window.innerWidth >= 1200 ? 80 : 36;
   useEffect(() => {
     const generateDots = () => {
       const newDots = [];
@@ -21,7 +22,7 @@ const Dots = () => {
     generateDots();
   }, []);
   return (
-    <div className="fixed top-0 left-0 w-full h-full overflow-hidden z-10">
+    <div className="fixed top-0 left-0 w-full h-full overflow-hidden z-10 pointer-events-none">
       {dots.map((dot) => {
         return (
           <div
